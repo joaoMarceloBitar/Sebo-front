@@ -29,6 +29,7 @@ export default function Propostas() {
 
     const propostasTable = propostas.map(proposta => (
         <tr key={proposta.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            {/*    
             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <p><b>{proposta.carro.marca.nome} {proposta.carro.modelo}</b></p>
                 <p className='mt-3'>Ano: {proposta.carro.ano} -
@@ -37,6 +38,7 @@ export default function Propostas() {
             <td className="px-6 py-4">
                 <img src={proposta.carro.foto} className="fotoCarro" alt="Foto Carro" />
             </td>
+            */}
             <td className="px-6 py-4">
                 <p><b>{proposta.descricao}</b></p>
                 <p><i>Enviado em: {dataDMA(proposta.createdAt)}</i></p>
