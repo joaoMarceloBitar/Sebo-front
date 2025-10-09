@@ -1,5 +1,4 @@
 import { CardLivro } from "./components/CardLivro";
-import { InputPesquisa } from "./components/InputPesquisa";
 import type { AnuncioType } from "./utils/AnuncioType";
 import { useEffect, useState } from "react";
 import { useUsuarioStore } from "./context/UsuarioContext"

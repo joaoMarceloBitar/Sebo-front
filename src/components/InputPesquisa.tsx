@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import type { LivroType } from "../utils/LivroType";
 import type { AnuncioType } from "../utils/AnuncioType";
 
 
