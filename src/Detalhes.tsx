@@ -3,7 +3,7 @@ import type { PropostaType } from "./utils/PropostaType"
 import type { AutorType } from "./utils/AutorType"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { useClienteStore } from "./context/ClienteContext"
+import { useUsuarioStore } from "./context/UsuarioContext"
 import { useForm } from "react-hook-form"
 import { toast } from 'sonner'
 
@@ -18,7 +18,7 @@ export default function Detalhes() {
   const [anuncio, setAnuncio] = useState<AnuncioType>()
   const [propostas, setPropostas] = useState<PropostaType[]>([])
   const [autor, setAutor] = useState<AutorType | null>(null)
-  const { cliente } = useClienteStore()
+  const { usuario } = useUsuarioStore()
 
   const { register, handleSubmit, reset } = useForm<Inputs>()
 
@@ -50,7 +50,7 @@ export default function Detalhes() {
       },
       method: "POST",
       body: JSON.stringify({
-        usuarioId: cliente.id,
+        usuarioId: usuario.id,
         anuncioId: Number(params.anuncioId),
         descricao: data.descricao
 })
@@ -85,13 +85,13 @@ export default function Detalhes() {
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {anuncio?.livro?.descricao}
           </p>
-          {cliente.id ?
+          {usuario.id ?
             <>
               <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                 🙂Você pode fazer uma Proposta para este livro!
               </h3>
               <form onSubmit={handleSubmit(enviaProposta)}>
-                <input type="text" className="mb-2 mt-4 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value={`${cliente.nome} (${cliente.email})`} disabled readOnly />
+                <input type="text" className="mb-2 mt-4 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value={`${usuario.nome} (${usuario.email})`} disabled readOnly />
                 <textarea id="message" className="mb-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Descreva a sua proposta"
                   required

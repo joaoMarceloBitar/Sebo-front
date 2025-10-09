@@ -2,13 +2,13 @@ import { CardLivro } from "./components/CardLivro";
 import { InputPesquisa } from "./components/InputPesquisa";
 import type { AnuncioType } from "./utils/AnuncioType";
 import { useEffect, useState } from "react";
-import { useClienteStore } from "./context/ClienteContext"
+import { useUsuarioStore } from "./context/UsuarioContext"
 
 const apiUrl = import.meta.env.VITE_API_URL
 
 export default function App() {
   const [ anuncios, setAnuncios] = useState<AnuncioType[]>([])
-  const { logaCliente } = useClienteStore()  
+  const { logaUsuario } = useUsuarioStore()  
 
   useEffect(() => {
     async function buscaDados() {
@@ -22,7 +22,7 @@ export default function App() {
     async function buscaCliente(id: string) {
       const response = await fetch(`${apiUrl}/usuarios/${id}`)
       const dados = await response.json()
-      logaCliente(dados)
+      logaUsuario(dados)
     }
     if (localStorage.getItem("usuarioKey")) {
       const idUsuario = localStorage.getItem("usuarioKey")

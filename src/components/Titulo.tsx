@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom"
-import { useClienteStore } from "../context/ClienteContext"
+import { useUsuarioStore } from "../context/UsuarioContext"
 import { useNavigate } from "react-router-dom"
 import { InputPesquisa } from "./InputPesquisa"
 import type { SetStateAction } from "react"
 import type { AnuncioType } from "../utils/AnuncioType"
 
 export default function Titulo() {
-    const { cliente, deslogaCliente } = useClienteStore()
+    const { usuario, deslogaUsuario } = useUsuarioStore()
     const navigate = useNavigate()
 
-    function clienteSair() {
+    function usuarioSair() {
         if (confirm("Confirma saída do sistema?")) {
-            deslogaCliente()
+            deslogaUsuario()
             if (localStorage.getItem("clienteKey")) {
                 localStorage.removeItem("clienteKey")
             }
@@ -46,16 +46,16 @@ export default function Titulo() {
                     <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
                         <li>
                             {/* procura cliente ID pra ver se tem algum logado  */}
-                            {cliente.id ?
+                            {usuario.id ?
                                 <>
                                     <span className="text-black">
-                                        {cliente.nome}
+                                        {usuario.nome}
                                     </span>&nbsp;&nbsp;
                                     <Link to="/minhasPropostas" className="text-white font-bold bg-gray-600 hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-gray-400 rounded-lg text-sm w-full sm:w-auto px-3 py-2 text-center dark:bg-gray-500 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                                         Minhas Propostas
                                     </Link>&nbsp;&nbsp;
                                     <span className="cursor-pointer font-bold text-gray-600"
-                                        onClick={clienteSair}>
+                                        onClick={usuarioSair}>
                                         Sair
                                     </span>
                                 </>

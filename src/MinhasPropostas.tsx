@@ -1,17 +1,17 @@
 import './MinhasPropostas.css'
 import { useEffect, useState } from "react";
-import { useClienteStore } from "./context/ClienteContext";
+import { useUsuarioStore } from "./context/UsuarioContext";
 import type { PropostaType } from "./utils/PropostaType";
 
 const apiUrl = import.meta.env.VITE_API_URL
 
 export default function Propostas() {
     const [propostas, setPropostas] = useState<PropostaType[]>([])
-    const { cliente } = useClienteStore()
+    const { usuario } = useUsuarioStore()
 
     useEffect(() => {
         async function buscaDados() {
-            const response = await fetch(`${apiUrl}/propostas/${cliente.id}`)
+            const response = await fetch(`${apiUrl}/propostas/${usuario.id}`)
             const dados = await response.json()
             setPropostas(dados)
         }

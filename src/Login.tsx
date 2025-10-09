@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom";
 
 import { toast } from "sonner"
-import { useClienteStore } from "./context/ClienteContext"
+import { useUsuarioStore } from "./context/UsuarioContext"
 
 type Inputs = {
     email: string
@@ -15,7 +15,7 @@ const apiUrl = import.meta.env.VITE_API_URL
 
 export default function Login() {
     const { register, handleSubmit } = useForm<Inputs>()    
-    const { logaCliente } = useClienteStore()
+    const { logaUsuario } = useUsuarioStore()
 
     const navigate = useNavigate()
 
@@ -34,7 +34,7 @@ export default function Login() {
             const dados = await response.json()
 
             // "coloca" os dados do cliente no contexto
-            logaCliente(dados)
+            logaUsuario(dados)
             
             // se o cliente indicou que quer se manter conectado
             // salvamos os dados (id) dele em localStorage
