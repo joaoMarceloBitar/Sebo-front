@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import { useUsuarioStore } from "../context/UsuarioContext"
 import { useNavigate } from "react-router-dom"
-import { InputPesquisa } from "./InputPesquisa"
+{/*import { InputPesquisa } from "./InputPesquisa"
 import type { SetStateAction } from "react"
-import type { AnuncioType } from "../utils/AnuncioType"
+import type { AnuncioType } from "../utils/AnuncioType"*/}
 
 export default function Titulo() {
     const { usuario, deslogaUsuario } = useUsuarioStore()
