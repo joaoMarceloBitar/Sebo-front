@@ -13,7 +13,7 @@ import AdminLayout from './admin/AdminLayout.tsx'
 import AdminDashboard from './admin/AdminDashboard.tsx'
 import AdminCarros from './admin/AdminCarros.tsx'
 import AdminLogin from './admin/AdminLogin.tsx'
-import CadCliente from './CadUsuario.tsx'
+import CadUsuario from './CadUsuario.tsx'
 
 const rotas = createBrowserRouter([
     {
@@ -36,7 +36,7 @@ const rotas = createBrowserRouter([
       { path: 'login', element: <Login /> },
       { path: 'detalhes/:anuncioId', element: <Detalhes /> },
       { path: 'minhasPropostas', element: <MinhasPropostas /> },
-      { path: 'cadCliente', element: <CadCliente /> },
+      { path: 'cadUsuario', element: <CadUsuario /> },
     ],
   },
 ])

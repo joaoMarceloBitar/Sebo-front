@@ -12,10 +12,10 @@ type Inputs = {
 
 const apiUrl = import.meta.env.VITE_API_URL
 
-export default function CadCliente() {
+export default function CadUsuario() {
     const { register, handleSubmit } = useForm<Inputs>()
 
-    async function cadastraCliente(data: Inputs) {
+    async function cadastraUsuario(data: Inputs) {
 
         if (data.senha != data.senha2) {
             toast.error("Erro... Senha e Confirme Senha precisam ser iguais")
@@ -23,7 +23,7 @@ export default function CadCliente() {
         }
 
         const response = await
-            fetch(`${apiUrl}/clientes`, {
+            fetch(`${apiUrl}/usuarios`, {
                 headers: { "Content-Type": "application/json" },
                 method: "POST",
                 body: JSON.stringify({
@@ -53,7 +53,7 @@ export default function CadCliente() {
                             Cadastro de Cliente
                         </h1>
                         <form className="space-y-4 md:space-y-6" 
-                          onSubmit={handleSubmit(cadastraCliente)}>
+                          onSubmit={handleSubmit(cadastraUsuario)}>
                             <div>
                                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome:</label>
                                 <input type="text" id="nome" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Seu nome completo" required 
