@@ -28,8 +28,8 @@ export default function CadUsuario() {
                 method: "POST",
                 body: JSON.stringify({
                     nome: data.nome,
-                    cidade: data.cidade,
                     email: data.email,
+                    cidade: data.cidade,
                     senha: data.senha
                 })
             })
