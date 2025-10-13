@@ -24,18 +24,18 @@ export default function Detalhes() {
 
   useEffect(() => {
     async function buscaAnuncio() {
-      const response = await fetch(`${apiUrl}/api/anuncios/${params.anuncioId}`)
+      const response = await fetch(`${apiUrl}/anuncios/${params.anuncioId}`)
       const dados = await response.json()
       setAnuncio(dados)
       // Busca o autor após receber o anúncio
       if (dados.livro?.id_autor) {
-        const respAutor = await fetch(`${apiUrl}/api/autores/${dados.livro.id_autor}`)
+        const respAutor = await fetch(`${apiUrl}/autores/${dados.livro.id_autor}`)
         const dadosAutor = await respAutor.json()
         setAutor(dadosAutor)
       }
     }
     async function buscaPropostas() {
-      const response = await fetch(`${apiUrl}/api/propostas?anuncioId=${params.anuncioId}`)
+      const response = await fetch(`${apiUrl}/propostas?anuncioId=${params.anuncioId}`)
       const dados = await response.json()
       setPropostas(dados)
     }
@@ -44,7 +44,7 @@ export default function Detalhes() {
   }, [params.anuncioId])
 
   async function enviaProposta(data: Inputs) {
-    const response = await fetch(`${apiUrl}/api/propostas`, {
+    const response = await fetch(`${apiUrl}/propostas`, {
       headers: {
         "Content-Type": "application/json"
       },
@@ -60,7 +60,7 @@ export default function Detalhes() {
       toast.success("Obrigado. Sua proposta foi enviada. Aguarde retorno")
       reset()
       // Atualiza lista de propostas após envio
-      const novasPropostas = await fetch(`${apiUrl}/api/propostas?anuncioId=${params.anuncioId}`)
+      const novasPropostas = await fetch(`${apiUrl}/propostas?anuncioId=${params.anuncioId}`)
       setPropostas(await novasPropostas.json())
     } else {
       toast.error("Erro... Não foi possível enviar sua proposta")
