@@ -11,7 +11,7 @@ export default function App() {
 
   useEffect(() => {
     async function buscaDados() {
-      const response = await fetch(`${apiUrl}/anuncios/destaques`)
+      const response = await fetch(`${apiUrl}/api/anuncios/destaques`)
       const dados = await response.json()
       console.log(dados)
       setAnuncios(dados)
