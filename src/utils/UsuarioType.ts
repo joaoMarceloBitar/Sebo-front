@@ -2,6 +2,6 @@ export type UsuarioType = {
   id: string  
   nome: string
   email: string
-  endereco?: string | null
-  tipo_usuario: "CLIENTE" | "ADMIN" 
+  endereco: string
+  cidade: string
 }

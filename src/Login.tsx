@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 import { toast } from "sonner"
 import { useUsuarioStore } from "./context/UsuarioContext"
@@ -98,8 +99,7 @@ export default function Login() {
                                 Entrar
                             </button>
                             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Ainda não possui conta? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Cadastre-se</a>
-                            </p>
+                                Ainda não possui conta? <Link to="/cadCliente" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Cadastre-se</Link>                            </p>
                         </form>
                     </div>
                 </div>
