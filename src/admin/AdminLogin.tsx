@@ -38,6 +38,8 @@ export default function AdminLogin() {
     }
   }
 
+
+  //teste
   return (
     <main className="max-w-screen-xl flex flex-col items-center mx-auto p-6">
       <img src="../../livroLogo.webp" alt="Revenda" style={{ width: 240 }}
