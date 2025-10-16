@@ -11,7 +11,7 @@ import Layout from './Layout.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AdminLayout from './admin/AdminLayout.tsx'
 import AdminDashboard from './admin/AdminDashboard.tsx'
-import AdminCarros from './admin/AdminCarros.tsx'
+import AdminAnuncios from './admin/AdminAnuncios.tsx'
 import AdminLogin from './admin/AdminLogin.tsx'
 import CadUsuario from './CadUsuario.tsx'
 
@@ -25,7 +25,7 @@ const rotas = createBrowserRouter([
     element: <AdminLayout />,  // layout principal do admin com menus e outlet
     children: [
       { index: true, element: <AdminDashboard /> },     // rota /admin
-      { path: "carros", element: <AdminCarros /> },     // rota /admin/carros
+      { path: "anuncios", element: <AdminAnuncios /> },     // rota /admin/carros
     ],
   },
   {
