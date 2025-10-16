@@ -40,7 +40,7 @@ export default function AdminLogin() {
 
   return (
     <main className="max-w-screen-xl flex flex-col items-center mx-auto p-6">
-      <img src="../../fusca.png" alt="Revenda" style={{ width: 240 }}
+      <img src="../../livroLogo.webp" alt="Revenda" style={{ width: 240 }}
         className="d-block" />
       <div className="max-w-sm">
         <h1 className="text-3xl font-bold my-8">Admin: Sebo dos Guris</h1>

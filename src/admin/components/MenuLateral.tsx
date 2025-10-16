@@ -1,6 +1,7 @@
 import { useAdminStore } from "../../context/AdminContext"
 import { IoExitOutline } from "react-icons/io5"
 import { BiSolidDashboard } from "react-icons/bi"
+import { BsBook, BsCartFill, BsPerson } from "react-icons/bs"
 import { FaCarSide, FaUsers } from "react-icons/fa6"
 import { BsCashCoin } from "react-icons/bs"
 
@@ -32,7 +33,7 @@ export function MenuLateral() {
           <li>
             <Link to="/admin/anuncios" className="flex items-center p-2">
               <span className="h-5 text-gray-600 text-2xl">
-                <FaCarSide />
+                <BsBook />
               </span>
               <span className="ms-2 mt-1">Cadastro de Veículos</span>
             </Link>
