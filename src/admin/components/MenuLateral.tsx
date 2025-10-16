@@ -1,8 +1,8 @@
 import { useAdminStore } from "../../context/AdminContext"
 import { IoExitOutline } from "react-icons/io5"
 import { BiSolidDashboard } from "react-icons/bi"
-import { BsBook, BsCartFill, BsPerson } from "react-icons/bs"
-import { FaCarSide, FaUsers } from "react-icons/fa6"
+import { BsBook } from "react-icons/bs"
+import { FaUsers } from "react-icons/fa6"
 import { BsCashCoin } from "react-icons/bs"
 
 import { Link, useNavigate } from "react-router-dom"
