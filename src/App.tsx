@@ -24,8 +24,8 @@ export default function App() {
       const dados = await response.json()
       logaUsuario(dados)
     }
-    if (localStorage.getItem("usuarioKey")) {
-      const idUsuario = localStorage.getItem("usuarioKey")
+    if (localStorage.getItem("clienteKey")) {
+      const idUsuario = localStorage.getItem("clienteKey")
       buscaCliente(idUsuario as string)
     }    
   }, [])
