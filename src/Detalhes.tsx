@@ -110,8 +110,8 @@ export default function Detalhes() {
             {propostas.length === 0 && <p className="text-gray-500">Nenhuma proposta ainda.</p>}
             <ul>
               {propostas.map((p) => (
-                <li key={p.usuarioId} className="mb-2 border-b border-gray-200 dark:border-gray-600 pb-2">
-                  <span className="font-bold">{p.usuarioId}</span>: {p.descricao}
+                <li key={p.usuarioId} className="mb-2 border-b border-gray-200 dark:border-white pb-2">
+                  <span className="font-bold text-gray-400">{p.usuario.nome}</span>: {p.descricao}
                   {p.resposta && (
                     <div className="text-green-700 dark:text-green-400 mt-1">Resposta: {p.resposta}</div>
                   )}
