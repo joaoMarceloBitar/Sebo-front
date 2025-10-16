@@ -22,7 +22,7 @@ export default function AdminLogin() {
   }, [])
 
   async function verificaLogin(data: Inputs) {
-    const response = await fetch(`${apiUrl}/admin/login`, {
+    const response = await fetch(`${apiUrl}/adminLogin`, {
       method: "POST",
       headers: { "Content-type": "Application/json" },
       body: JSON.stringify({ email: data.email, senha: data.senha })
