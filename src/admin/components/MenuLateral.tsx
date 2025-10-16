@@ -44,7 +44,7 @@ export function MenuLateral() {
                 <FaUsers />
               </span>
               <span className="ms-2 mt-1">Controle de Clientes</span>
-            </Link>
+          </Link>
           </li>
           <li>
           <Link to="/admin/propostas" className="flex items-center p-2 cursor-pointer">

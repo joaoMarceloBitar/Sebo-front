@@ -21,7 +21,7 @@ export default function ItemAnuncio({ anuncio, anuncios, setAnuncios }: listaAnu
     }
 
     if (confirm(`Confirma a exclusão`)) {
-      const response = await fetch(`${apiUrl}/anuncio/${anuncio.id}`,
+      const response = await fetch(`${apiUrl}/anuncios/${anuncio.id}`,
         {
           method: "DELETE",
           headers: {
@@ -43,7 +43,7 @@ export default function ItemAnuncio({ anuncio, anuncios, setAnuncios }: listaAnu
 
   async function alterarDestaque() {
 
-    const response = await fetch(`${apiUrl}/carros/destacar/${anuncio.id}`,
+    const response = await fetch(`${apiUrl}/anuncios/destacar/${anuncio.id}`,
       {
         method: "PATCH",
         headers: {
