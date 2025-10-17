@@ -15,8 +15,10 @@ export default function ItemAnuncio({ anuncio, anuncios, setAnuncios }: listaAnu
   const { admin } = useAdminStore()
 
   async function excluirAnuncio() {
+    console.log("Token do admin:", admin?.token);
+    console.log("ID do anúncio:", anuncio.id, typeof anuncio.id);
     if (!admin || admin.nivel == 1) {
-      alert("Você não tem permissão para excluir veículos");
+      alert("Você não tem permissão para excluir anuncioss");
       return;
     }
 
@@ -34,9 +36,9 @@ export default function ItemAnuncio({ anuncio, anuncios, setAnuncios }: listaAnu
       if (response.status == 200) {
         const anuncios2 = anuncios.filter(x => x.id != anuncio.id)
         setAnuncios(anuncios2)
-        alert("Carro excluído com sucesso")
+        alert("Anuncio excluído com sucesso")
       } else {
-        alert("Erro... Carro não foi excluído")
+        alert("Erro... Anuncio não foi excluído")
       }
     }
   }
